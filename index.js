@@ -1,5 +1,13 @@
+const { consoleLog } = require("mocha/lib/reporters/base")
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // Write your algorithm here 
+  const seenNumbers = {};
+  for (const number of array){
+    const complement = target - number;
+    if (complement in seenNumbers) return true;
+    seenNumbers[number] = true;
+}
+return false;
 }
 
 /* 
